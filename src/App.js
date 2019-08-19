@@ -1,26 +1,55 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
+import Todos from './components/Todos';
+import Header from './components/layout/Header';
+import AddTodo from './components/AddTodo';
+import About from './components/pages/About';
+import {Provider} from 'react-redux';
+import store from './store';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {todos: []}
+  }
+
+  // Toggle Complete
+  markComplete = (id) => {
+    this.setState({
+      todos: this.state.todos.map(todo => {
+        if (id === todo.id) {
+          todo.completed = !todo.completed
+        }
+        return todo
+      })
+    })
+  }
+
+  render() {
+    return (
+      <Provider store={store}>
+        <Router>
+          <div className="App">
+            <div className="container">
+              <Header />
+              <Route path="/" exact render={props => (
+                <React.Fragment>
+                  <AddTodo />
+                  <Todos todos={this.state.todos} markComplete={this.markComplete} />
+                </React.Fragment>
+              )} />
+              <Route path="/about" render={props => (
+                <React.Fragment>
+                  <About />
+                </React.Fragment>
+              )} />
+            </div>
+          </div>
+        </Router>
+      </Provider>
+    );
+  }
 }
 
 export default App;
