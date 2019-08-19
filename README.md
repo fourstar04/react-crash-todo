@@ -1,6 +1,6 @@
 # React Crash Course TodoList
 
-This app is a simple Todo List client that uses the [JSON placeholder API](https://jsonplaceholder.typicode.com) for mock content and REST API interaction.
+This app ([check it out on gh-pages](https://fourstar04.github.io/react-crash-todo/)) is a simple Todo List client that uses the [JSON placeholder API](https://jsonplaceholder.typicode.com) for mock content and REST API interaction.
 
 This project was produced by following along with [Traversy Media's React JS Crash Course - 2019 video](https://www.youtube.com/watch?v=sBws8MSXN7A) and then later blending in the lessons from [Traversy Media's Redux Crash Course with React](https://www.youtube.com/watch?v=93p3LxR9xfM).  I would recommend these tutorials to anyone with javascript and mvc experience and an interest in learning the fundamentals of React applications and state management.
 
