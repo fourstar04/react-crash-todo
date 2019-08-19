@@ -15,7 +15,7 @@ export default function(state = initialState, action) {
         case ADD_TODO:
             return {
                 ...state,
-                todos: [...state.todos, action.payload], 
+                todos: [action.payload, ...state.todos], 
             }
         case EDIT_TODO:
             return {
