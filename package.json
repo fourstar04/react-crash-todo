@@ -1,8 +1,10 @@
 {
   "name": "react-crash-todo",
+  "homepage": "https://fourstar04.github.io/react-crash-todo",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "gh-pages": "^2.1.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-redux": "^7.1.0",
@@ -11,6 +13,8 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
