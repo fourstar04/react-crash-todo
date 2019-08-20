@@ -15,11 +15,13 @@ export default function(state = initialState, action) {
         case ADD_TODO:
             return {
                 ...state,
+                todo: action.payload,
                 todos: [action.payload, ...state.todos], 
             }
         case EDIT_TODO:
             return {
                 ...state,
+                todo: action.payload,
                 todos: [...state.todos.map(todo => {
                     if (todo.id === action.payload.id) return action.payload
                     return todo
