@@ -1,25 +1,24 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 function Header() {
     return (
-        <header style={headerStyle}>
-            <h1>TodoList</h1>
-            <Link to="/" style={linkStyle} >Home</Link> | <Link to="/about" style={linkStyle}>About</Link>
+        <header>
+            <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+                <Link className="navbar-brand" to="/">Todo List</Link>
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div className="navbar-nav">
+                        <NavLink className="nav-item nav-link" to="/" exact>Home</NavLink>
+                        <NavLink className="nav-item nav-link" to="/about">About</NavLink>
+                    </div>
+                </div>
+            </nav>
+
         </header>
     )
-}
-
-const headerStyle = {
-    background: 'rebeccapurple',
-    color: '#fff',
-    textAlign: 'center',
-    padding: '10px'
-}
-
-const linkStyle = {
-    color: '#fff',
-    textDecoration: 'none'
 }
 
 export default Header

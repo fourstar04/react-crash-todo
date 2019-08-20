@@ -31,20 +31,18 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App">
-            <div className="container">
-              <Header />
-              <Route path="/" exact render={props => (
-                <React.Fragment>
-                  <AddTodo />
-                  <Todos todos={this.state.todos} markComplete={this.markComplete} />
-                </React.Fragment>
-              )} />
-              <Route path="/about" render={props => (
-                <React.Fragment>
-                  <About />
-                </React.Fragment>
-              )} />
-            </div>
+            <Header />
+            <Route path="/" exact render={props => (
+              <React.Fragment>
+                <AddTodo />
+                <Todos todos={this.state.todos} markComplete={this.markComplete} />
+              </React.Fragment>
+            )} />
+            <Route path="/about" render={props => (
+              <React.Fragment>
+                <About />
+              </React.Fragment>
+            )} />
           </div>
         </Router>
       </Provider>

@@ -6,9 +6,6 @@ import { editTodo, deleteTodo } from '../actions/todoActions'
 export class TodoItem extends Component {
     getStyle = () => {
         return {
-            background: '#f4f4f4',
-            padding: '10px',
-            borderBottom: '1px #ccc dotted',
             textDecoration: this.props.todo.completed ?
                 'line-through' : 'none'
         }
@@ -29,12 +26,12 @@ export class TodoItem extends Component {
     render() {
         const { title, completed } = this.props.todo;
         return (
-            <div style={this.getStyle()}>
-                <p>
-                    <input type="checkbox" onChange={this.markComplete} checked={completed} /> {' '}
-                    {title}
-                    <button onClick={this.deleteTodo} style={btnStyle}> x </button>
-                </p>
+            <div className="list-group-item bg-white">
+                <div className="form-control border-0 p-0 d-flex align-items-center">
+                    <input className="mr-3" type="checkbox" onChange={this.markComplete} checked={completed} />
+                    <span style={this.getStyle()}>{title}</span>
+                    <button className="btn btn-sm btn-outline-danger ml-auto" onClick={this.deleteTodo}> X </button>
+                </div>
             </div>
         )
     }

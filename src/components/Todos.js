@@ -10,9 +10,16 @@ class Todos extends Component {
   }
 
   render() {
-    return this.props.todos.map(todo => (
-      <TodoItem key={todo.id} todo={todo} markComplete={this.props.markComplete} />
-    ))
+    return (
+      <div className="container">
+        <div className="list-group">
+          {this.props.todos.map(todo => (
+            <TodoItem key={todo.id} todo={todo} markComplete={this.props.markComplete} />
+          ))}
+        </div>
+      </div>
+
+    )
   }
 }
 
