@@ -5,13 +5,13 @@ import Todos from './components/Todos';
 import Header from './components/layout/Header';
 import AddTodo from './components/AddTodo';
 import About from './components/pages/About';
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 import store from './store';
 
 class App extends Component {
   constructor(props) {
     super(props)
-    this.state = {todos: []}
+    this.state = { todos: [] }
   }
 
   // Toggle Complete

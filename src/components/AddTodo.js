@@ -9,7 +9,7 @@ export class AddTodo extends Component {
     title: ''
   }
 
-  onChange = (e) => this.setState({ title: e.target.value})
+  onChange = (e) => this.setState({ title: e.target.value })
 
   onSubmit = (e) => {
     e.preventDefault()
@@ -17,7 +17,7 @@ export class AddTodo extends Component {
       title: this.state.title,
       completed: false
     })
-    this.setState({title: ''})
+    this.setState({ title: '' })
   }
 
   render() {
@@ -26,20 +26,20 @@ export class AddTodo extends Component {
         <div class="container my-3">
           <div className="input-group">
             <input className="form-control"
-              type="text" 
+              type="text"
               name="title"
-              style={{flex: '10', padding: '5px'}}
+              style={{ flex: '10', padding: '5px' }}
               placeholder="Add Todo"
               value={this.state.title}
               onChange={this.onChange}
             />
             <div className="input-group-append">
-            <input className="btn btn-primary" type="submit" value="Submit" />
+              <input className="btn btn-primary" type="submit" value="Submit" />
+            </div>
           </div>
+
         </div>
-        
-      </div>
-        
+
       </form>
     )
   }
