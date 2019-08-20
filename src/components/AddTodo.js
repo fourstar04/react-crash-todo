@@ -23,7 +23,7 @@ export class AddTodo extends Component {
   render() {
     return (
       <form onSubmit={this.onSubmit}>
-        <div class="container my-3">
+        <div className="container my-3">
           <div className="input-group">
             <input className="form-control"
               type="text"
