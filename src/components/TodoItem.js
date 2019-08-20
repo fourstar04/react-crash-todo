@@ -43,14 +43,4 @@ TodoItem.propTypes = {
     deleteTodo: PropTypes.func.isRequired
 }
 
-const btnStyle = {
-    background: '#ff0000',
-    color: '#fff',
-    border: 'none',
-    padding: '5px 5px',
-    borderRadius: '50%',
-    cursor: 'pointer',
-    float: 'right'
-}
-
 export default connect(null, { editTodo, deleteTodo })(TodoItem);
