@@ -28,7 +28,7 @@ export class TodoItem extends Component {
         return (
             <div className="list-group-item bg-white">
                 <div className="form-control border-0 p-0 d-flex align-items-center">
-                    <input className="mr-3" type="checkbox" onChange={this.markComplete} checked={completed} />
+                    <input className="mr-3 flex-shrink-0" type="checkbox" onChange={this.markComplete} checked={completed} />
                     <span style={this.getStyle()}>{title}</span>
                     <button className="btn btn-sm btn-outline-danger ml-auto" onClick={this.deleteTodo}> X </button>
                 </div>
